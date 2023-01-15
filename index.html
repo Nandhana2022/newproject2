@@ -4,9 +4,143 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>new project</title>
+    <title>personal details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
 </head>
 <body>
-  <h1>hi</h1>  
+<div id="header">
+  <div class="container">
+    <nav>
+      <img src="images/loggggo.jpg" width="100" height="50" class="logo">
+      <ul>
+        <li><a href="#header">Home</a></li>
+        <li><a href="#about">About</a></li> 
+        <li><a href="#about">Skills</a></li> 
+        <li> <a href="#about">Education</a></li> 
+        <li><a href="#about">Experience</a></li>
+          <li>   <a href="#contact">Contact</a></li>
+      </ul>
+        
+     
+    </nav>
+  <div class="header-text">
+    <div class="content-center">
+      <div class="cc-profile-image">
+        <a href="#">
+          
+     <img src="images/pic.jpeg" alt="Image"></a></div>
+    <p><h6>SOFTWARE DEVELOPER</h6></p>
+    <h2>Hi,I'm <span>Nandhana</span><br> C N From India</h2>
+  </div></div>
+  </div>
+</div>
+<div id="about">
+  <div class="container">
+    <div class="row">
+     <div class="about-col-1"> 
+      
+      <img src="images/cd.jpg">
+    </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">About Me</h1>
+       <p>Hello! Iam Nandhana C N.I'm from thrissur in kerala.I'm a Msc computer science graduate.
+          I am looking to becoming a part of a esteemed organization and contribute to the company's success as a fresher .
+          My career goal is to enhance my skills, capabilities and knowledge in an organization which
+          recognizes the value of hard-working trusts me with responsibilities and
+          challenges.My technical skills are c,php,MYSQL, Html,css.</p>
+      <div class="tab-titles">
+       <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+        <p class="tab-links"onclick="opentab('experience')" >Experience</p>
+        <p class="tab-links"onclick="opentab('education')">Education</p></div>
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>C</span></li>
+            <li><span>PHP</span></li>
+            <li><span>MYSQL</span></li>
+            <li><span>HTML</span></li>
+            <li><span>CSS</span></li>
+
+          </ul>
+        </div>
+        <div class="tab-contents" id="experience">
+          <ul>
+            <li><span>JAN 2022-MAR 2022</span><br> Internship at Star innovations thrissur</li>
+            <li><span>NOV 2020-FEB 2021</span><br> Internship at Mocoit solutions kochi</li>
+            
+
+          </ul>
+        </div>
+        <div class="tab-contents" id="education">
+          <ul>
+            <li><span>2020-2022</span><br>Msc cs from St thomas college Thrissur</li>
+            <li><span>2017-2020</span><br>Bsc cs from LFcollege Guruvayoor</li>
+            <li><span>2015-2017</span><br> PLustwo from Ghss Mullassery</li>
+            <li><span>2014-2015</span><br> Sslc from Ckcghs Pavaratty</li>
+
+          </ul>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div></div>
+
+
+<div id="contact">
+ <div class="container">
+  <div class="row">
+    <div class="contact-left">
+      <h1 class="sub-title">Contact Me</h1>
+     <i class="fa fa-envelope" style="font-size:24px"></i>nandhunarendran2000@gmail.com<br>
+      <i class="fa fa-phone" style="font-size:24px"></i> 7558835948<br>
+      <i class="fa fa-home" style="font-size:24px"></i>Chulliyil(H) Venkidangu P O 680510,thrissur,kerala
+      <div class="social-icons">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-linkedin"></a>  
+<a href="#" class="fa fa-instagram"></a>
+    </div></div>
+    <div class="contact-right">
+
+    <form name="submit-to-google-sheet">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="Message" cols="6" rows="10" placeholder="Your Message"></textarea>
+      <button type="submit" class="btn btn2">Submit</button>
+    </form>
+    </div>
+  </div>
+</div>
+</div>
+<div class="copyright">
+  <p>Copyright @Nandhana.Made by Nandhana</p>
+</div>
+<script>
+  var tablinks=document.getElementsByClassName("tab-links");
+  var tabcontents=document.getElementsByClassName("tab-contents");
+  function opentab(tabname){
+    for(tablink of tablinks){
+      tablink.classList.remove("active-link");
+
+    }
+    for(tabcontent of tabcontents){
+      tabcontent.classList.remove("active-tab");
+      
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+  }
+</script>
+<script>
+  const scriptURL = '<https://script.google.com/macros/s/AKfycby5vLi5KOHE3oVE6nxqJHxE01HhIbyVRbyXIRt75hE5dgOeBNm6uWiKTklOviJ5qOTf/exec>'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
 </body>
 </html>
